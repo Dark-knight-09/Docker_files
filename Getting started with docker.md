@@ -34,8 +34,11 @@ to check images in hub
 to remove a images in hub
 > docker rmi [image_name]:[tag]
 
-to pull a image from docker hub(online)
+to pull a image from docker hub or repository(online)
 > docker pull [image_name]:[tag]
+
+to push a image from docker hub or repository(online)
+> docker push [account_name]/[container_image]
 
 attach and deattach mode container
 > docker run [image_name]:[tag] // attach deployement of the container 
@@ -55,5 +58,21 @@ options
 > -p  [internal_port_no]:[external_port_no] //mapping internal port to external port
 > -v  [external_directory_path]:[internal_directory_path]  //mapping host directory file for persistance storage of data
 
-data in docker  is provisional
+# data in docker  is provisional
+
+export environment variable to docker container
+> docker run -e [variable_name]=[value]  [container_image]
+
+
+
+steps to create Dockerfile 
+1. > From [operating_system_image]      // import image
+2. > RUN              // update apt repo
+3. > RUN              // install dependecies using apt
+4. > RUN              // install python lib using pip
+5. > COPY  [path]         // copying source code  folder
+6. > ENTRYPOINT       // declaring ENTRYPOINT
+
+converting Dockerfile to Dockerimage
+>docker build -t [account_id]/[image_name]
 
