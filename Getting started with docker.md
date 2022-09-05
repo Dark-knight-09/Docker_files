@@ -55,10 +55,12 @@ for attachment to container terminal
 > docker run -it [image_name]:[tag]  //for interactive container terminal(*better option)
 
 options
-> -p  [internal_port_no]:[external_port_no] //mapping internal port to external port
-> -v  [external_directory_path]:[internal_directory_path]  //mapping host directory file for persistance storage of data
+mapping internal port to external port
+> -p  [internal_port_no]:[external_port_no] 
+mapping host directory file for persistance storage of data
+> -v  [external_directory_path]:[internal_directory_path]  
 
-# data in docker  is provisional
+# data in docker container is ephemeral 
 
 export environment variable to docker container
 > docker run -e [variable_name]=[value]  [container_image]
@@ -71,8 +73,31 @@ steps to create Dockerfile
 3. > RUN              // install dependecies using apt
 4. > RUN              // install python lib using pip
 5. > COPY  [path]         // copying source code  folder
-6. > ENTRYPOINT       // declaring ENTRYPOINT
+6. > ENTRYPOINT or CMD       // declaring ENTRYPOINT
 
 converting Dockerfile to Dockerimage
 >docker build -t [account_id]/[image_name]
+
+
+
+
+Types of network in docker 
+1. bridge(default)
+2. none
+3. host
+
+docker newtorking commands
+> docker  network [commands]
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+ex:create a new bridge network
+> docker network create  --driver=[newtork_type]  --subnet=[ip_addr] [network_name]
+
 
