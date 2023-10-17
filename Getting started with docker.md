@@ -29,7 +29,7 @@ to remove a container from local hub
 > docker rm [contianer_name]
 
 to check images in hub
-> docker images
+> docker images ls
 
 to remove a images in hub
 > docker rmi [image_name]:[tag]
@@ -41,14 +41,14 @@ to push a image from docker hub or repository(online)
 > docker push [account_name]/[container_image]
 
 attach and deattach mode container
-> docker run [image_name]:[tag] // attach deployement of the container 
+> docker run [image_name]:[tag] // attach deployement of the container  //acts as active log shell
 > docker run -d [image_name]:[tag] //deattach deployment of the container command prompt or bash shell will be free
 
 to check logs in deattach container 
 >docker logs [container_name]
 
 for interactive deployment of container 
-> docker run -i [image_name]:[tag]
+> docker run -i [image_name]:[tag]  //image will be de-actived after the shell session is exited.
 
 for attachment to container terminal
 > docker run -t [image_name]:[tag]
@@ -56,7 +56,7 @@ for attachment to container terminal
 
 options
 mapping internal port to external port
-> -p  [internal_port_no]:[external_port_no] 
+> -p  [host_port_no]:[external_port_no] // used when container want to communicate with host network or input from host. like accessing container deployed website
 mapping host directory file for persistance storage of data
 > -v  [external_directory_path]:[internal_directory_path]  
 
