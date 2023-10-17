@@ -90,14 +90,14 @@ Types of network in docker
 
 docker newtorking commands
 > docker  network [commands]
-Commands:
-  connect     Connect a container to a network
-  create      Create a network
-  disconnect  Disconnect a container from a network
-  inspect     Display detailed information on one or more networks
-  ls          List networks
-  prune       Remove all unused networks
-  rm          Remove one or more networks
+> Commands:
+>  connect     Connect a container to a network
+>  create      Create a network
+>  disconnect  Disconnect a container from a network
+>  inspect     Display detailed information on one or more networks
+>  ls          List networks
+>  prune       Remove all unused networks
+>  rm          Remove one or more networks
 
 ex:create a new bridge network
 > docker network create  --driver=[newtork_type]  --subnet=[ip_addr] [network_name]
