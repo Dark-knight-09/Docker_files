@@ -69,14 +69,16 @@ export environment variable to docker container
 
 steps to create Dockerfile 
 1. > From [operating_system_image]      // import image
-2. > RUN              // update apt repo
-3. > RUN              // install dependecies using apt
-4. > RUN              // install python lib using pip
-5. > COPY  [path]         // copying source code  folder
-6. > ENTRYPOINT or CMD       // declaring ENTRYPOINT
+2. > WORKDIR /[NAME] // act as current working dir in container filesystem
+3. > COPY  [path]         // copying source code  folder
+4. > RUN              // update apt repo
+5. > RUN              // install dependecies using apt
+6. > RUN              // install python lib using pip
+7. > ENTRYPOINT or CMD       // declaring ENTRYPOINT or default command
 
 converting Dockerfile to Dockerimage
->docker build -t [account_id]/[image_name]
+>docker build -t [account_id]/[image_name] [dockerfile_path] // account id not necessary 
+
 
 
 
