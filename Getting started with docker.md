@@ -65,6 +65,16 @@ mapping host directory file for persistance storage of data
 export environment variable to docker container
 > docker run -e [variable_name]=[value]  [container_image]
 
+to filter docker container using image name
+> docker ps -a -f ancestor=[image_name] // search for all container with image name
+> docker ps -a -q   // gives all continer id's in the system
+>   
+
+to remove docker container or image :
+> docker rm [container_name] // remove container
+> docker rmi [image_name] // remove image
+> docker rm $(docker ps -a -q -f name=[container_name]) // remove all container
+
 
 
 steps to create Dockerfile 
