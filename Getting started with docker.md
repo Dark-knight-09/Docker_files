@@ -44,6 +44,9 @@ attach and deattach mode container
 > docker run [image_name]:[tag] // attach deployement of the container  //acts as active log shell
 > docker run -d [image_name]:[tag] //deattach deployment of the container command prompt or bash shell will be free
 
+to stop docker container:
+> docker stop [container_name]
+
 to check logs in deattach container 
 >docker logs [container_name]
 
@@ -68,11 +71,11 @@ export environment variable to docker container
 to filter docker container using image name
 > docker ps -a -f ancestor=[image_name] // search for all container with image name
 > docker ps -a -q   // gives all continer id's in the system
->   
+> docker ps -a  -f name=[container_name] // search for all container with container name
 
 to remove docker container or image :
 > docker rm [container_name] // remove container
-> docker rmi [image_name] // remove image
+> docker rmi -f [image_name] // remove image
 > docker rm $(docker ps -a -q -f name=[container_name]) // remove all container
 
 
