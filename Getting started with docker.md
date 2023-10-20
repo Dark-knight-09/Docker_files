@@ -83,7 +83,7 @@ to remove docker container or image :
 steps to create Dockerfile 
 1. > From [operating_system_image]      // import image
 2. > WORKDIR /[NAME] // act as current working dir in container filesystem
-3. > COPY  [path]         // copying source code  folder
+3. > COPY [host_path_folder] [container/path]    // copying source code  folder to container
 4. > RUN              // update apt repo
 5. > RUN              // install dependecies using apt
 6. > RUN              // install python lib using pip
@@ -94,7 +94,8 @@ converting Dockerfile to Dockerimage
 
 
 
-
+// by default docker uses TCP connection to communicate with host or port mapping.
+> docker run -p [host_port_no]:[container_port_no] \TCP or UDP\ [image_name]:[tag] 
 
 Types of network in docker 
 1. bridge(default)
