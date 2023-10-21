@@ -89,8 +89,10 @@ steps to create Dockerfile
 6. > RUN              // install python lib using pip
 7. > ENTRYPOINT or CMD       // declaring ENTRYPOINT or default command
 
-converting Dockerfile to Dockerimage
+converting Dockerfile to Dockerimage.
+name of the docker image should be in lowercase..
 >docker build -t [account_id]/[image_name] [dockerfile_path] // account id not necessary 
+
 
 
 
