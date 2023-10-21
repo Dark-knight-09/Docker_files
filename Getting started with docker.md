@@ -119,3 +119,6 @@ ex:create a new bridge network
 > docker network create  --driver=[newtork_type]  --subnet=[ip_addr] [network_name]
 
 
+to deploy a container in AWS serverless environment (Elastic Beanstalk) follow the below steps
+1. push the application docker image to docker hub through docker account.
+2. while configuration of Elastic Beanstalk upload the "dockerrun.aws.json" file which docker image configuration.
