@@ -125,9 +125,16 @@ docker newtorking commands
 >  prune       Remove all unused networks
 >  rm          Remove one or more networks
 
+Note: when containers are deployed they are deployed in bridge network by default.
+> docker network ls // list all networks
+> docker network inspect [network_name] // inspect network
+
 ex:create a new bridge network
 > docker network create  --driver=[newtork_type]  --subnet=[ip_addr] [network_name]
 
+user defined bridge network containes Automatic service discovery (DNS resolution between containers), container names are automatically resolved to ip address. 
+
+Note: Automatic service discover (DNS) is Not found in default bridge of containers across multiple host machines.
 
 to deploy a container in AWS serverless environment (Elastic Beanstalk) follow the below steps
 1. push the application docker image to docker hub through docker account.
