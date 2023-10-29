@@ -36,6 +36,10 @@ to remove a images in hub
 
 to pull a image from docker hub or repository(online)
 > docker pull [image_name]:[tag]
+> docker search [image_name] // search for image in docker hub
+
+to rename the docker image in local hub
+> docker tag [image_name]:[tag] [new_image_name]:[tag]
 
 to push a image from docker hub or repository(online)
 > docker push [account_name]/[container_image]
@@ -89,7 +93,13 @@ steps to create Dockerfile
 6. > RUN              // install python lib using pip
 7. > ENTRYPOINT or CMD       // declaring ENTRYPOINT or default command
 
+NOTE:
+1.ADD: used to copy file from host with additional functionality of downloading from internet and extract files.
 converting Dockerfile to Dockerimage.
+2. COPY: used to copy file from host to container.
+
+
+
 name of the docker image should be in lowercase..
 >docker build -t [account_id]/[image_name] [dockerfile_path] // account id not necessary 
 
