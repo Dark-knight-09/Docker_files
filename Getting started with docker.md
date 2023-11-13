@@ -3,6 +3,9 @@ Getting started with docker
 to check docker version
 docker --version
 
+to check docker info
+-- docker info
+
 to run sample container image in ur machine 
 > docker run hello-world
 -Hello from Docker!
