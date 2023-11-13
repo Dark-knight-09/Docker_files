@@ -104,7 +104,7 @@ converting Dockerfile to Dockerimage.
 
 
 name of the docker image should be in lowercase..
->docker build -t [account_id]/[image_name] [dockerfile_path] // account id not necessary 
+>docker build -t [account_id]/[image_name] [dockerfile_path] // account id not necessary and dockerfile name is not needed
 
 
 
