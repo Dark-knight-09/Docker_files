@@ -139,3 +139,4 @@ Note: Automatic service discover (DNS) is Not found in default bridge of contain
 to deploy a container in AWS serverless environment (Elastic Beanstalk) follow the below steps
 1. push the application docker image to docker hub through docker account.
 2. while configuration of Elastic Beanstalk upload the "dockerrun.aws.json" file which docker image configuration.
+
