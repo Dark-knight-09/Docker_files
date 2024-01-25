@@ -54,6 +54,15 @@ attach and deattach mode container
 to stop docker container:
 > docker stop [container_name]
 
+to start docker container:
+> docker start [container_name]
+
+to restart docker container:
+> docker restart [container_name]
+
+to conect to running docker container terminal
+>docker exec -it [container_name] /bin/bash
+
 to check logs in deattach container 
 >docker logs [container_name]
 
