@@ -69,9 +69,15 @@ to check logs in deattach container
 for interactive deployment of container 
 > docker run -i [image_name]:[tag]  //image will be de-actived after the shell session is exited.
 
+for naming container
+> docker run --name [container_name] [image_name]:[tag]
+
 for attachment to container terminal
 > docker run -t [image_name]:[tag]
 > docker run -it [image_name]:[tag]  //for interactive container terminal(*better option)
+
+to attach the alread runnning container.
+> docker attach [container_name]
 
 options
 mapping internal port to external port
