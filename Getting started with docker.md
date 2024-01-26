@@ -119,9 +119,7 @@ converting Dockerfile to Dockerimage.
 
 
 name of the docker image should be in lowercase..
->docker build -t [account_id]/[image_name] [dockerfile_path] // account id not necessary and dockerfile name is not needed
-
-
+>docker build -t [account_id]/[image_name] -f [Dockerfile_name] [dockerfile_path] // account id not necessary and dockerfile name is not needed
 
 
 // by default docker uses TCP connection to communicate with host or port mapping.
@@ -146,6 +144,25 @@ docker newtorking commands
 Note: when containers are deployed they are deployed in bridge network by default.
 > docker network ls // list all networks
 > docker network inspect [network_name] // inspect network
+
+to create a persistance disk
+> docker volume create [volume_name]
+
+there are two types of presistant disk mounts
+1. volume mount // used to mount docker volume to container directory
+2. bind mount // used to mount host directory to container directory
+
+> docker run -v [volume_name]:[container_directory_path] [image_name]:[tag] // volume mount
+> docker run -v [host_directory_path]:[container_directory_path] [image_name]:[tag] // bind mount
+
+to check volume
+> docker volume ls
+
+to connect two different containers
+> docker run -d --name [container_name] --link [container_name]:[alias_name] [image_name]:[tag] // link container to another container
+
+to check the ip address of the container
+> docker inspect [container_name] | grep "IPAddress"
 
 ex:create a new bridge network
 > docker network create  --driver=[newtork_type]  --subnet=[ip_addr] [network_name]
