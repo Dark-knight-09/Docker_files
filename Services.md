@@ -15,10 +15,31 @@ systemctl stop mysql // stop mysql service
 > systemctl is-active [service_name] // check if service is active
 > systemctl list-units --type=service // list all services
 
+after adding new service file in /etc/systemd/system/ directory
+> systemctl daemon-reload // reload the service file
+> systemctl start [service_name] // start service
+
+to create new service file in /etc/systemd/system/ directory
+> create a file [service_name].service
+basic format of service file
+"""
+[Unit]
+Description=My Service
+After=network.target
+
+[Service]
+ExecStart=/path/to/my/command
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+""" 
+
+
 # for Mac OS
 >launchctl list
 
-# for windows
+
 
 
 
