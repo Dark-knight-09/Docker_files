@@ -5,6 +5,8 @@
 systemctl start mysql // start mysql service
 systemctl stop mysql // stop mysql service
 
+systemctl is linux command to manage services in linux system
+
 > systemctl status [service_name] // check status of service
 > systemctl start [service_name] // start service
 > systemctl stop [service_name] // stop service
