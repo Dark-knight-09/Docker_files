@@ -130,6 +130,16 @@ Types of network in docker
 2. none
 3. host
 
+additional network types
+4. overlay
+5. macvlan
+
+overlay network is used to connect containers across multiple host machines.
+> docker network create --driver=overlay [network_name]
+
+macvlan network is used to connect containers to physical network.
+> docker network create --driver=macvlan --subnet=[ip_addr] --gateway=[gateway_ip] -o parent=[network_interface] [network_name]
+
 docker newtorking commands
 > docker  network [commands]
 > Commands:
@@ -144,6 +154,23 @@ docker newtorking commands
 Note: when containers are deployed they are deployed in bridge network by default.
 > docker network ls // list all networks
 > docker network inspect [network_name] // inspect network
+
+#network types in VMs and containers
+1. bridge
+2. host only
+3. NAT
+4. overlays
+5. macvlan
+
+NAT (Network Address Translation): In a NAT network, the guest systems share the host's IP address. The host system performs network address translation: it receives network traffic destined for each guest system and forwards it to the correct recipient. This allows the guest systems to connect to the internet, but they are not directly accessible from the host's network. For example, if you have 4 guest systems using NAT, they can all access the internet, but they cannot communicate with each other or with the host system unless port forwarding rules are set up.
+
+Bridged: In a bridged network, each guest system is connected directly to the physical network that the host system is connected to. Each guest system gets its own IP address on the host's network. This allows the guest systems to communicate with each other, with the host system, and with other devices on the network. For example, if you have 4 guest systems using a bridged network, they can all access the internet and communicate with each other and with the host system.
+
+Host-Only: In a host-only network, the guest systems can communicate with each other and with the host system, but they cannot access the internet. This is useful for creating a network of guest systems that is isolated from the host's physical network and the internet. For example, if you have 4 guest systems using a host-only network, they can communicate with each other and with the host system, but they cannot access the internet.
+
+Overlay: An overlay network is a virtual network that is created on top of an existing network. It allows containers to communicate with each other across multiple hosts. This is useful for creating a network of containers that can communicate with each other, even if they are running on different hosts.
+
+Macvlan: A macvlan network allows containers to have their own MAC addresses and IP addresses on the physical network. This is useful for creating a network of containers that are directly accessible from the host's network.
 
 to create a persistance disk
 > docker volume create [volume_name]
